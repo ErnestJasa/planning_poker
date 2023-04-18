@@ -200,7 +200,8 @@ export const SignalRProvider = ({children}) => {
     }
 
     const sendEmail = (email, roomId)=>{
-        const link = `bedarbiai-app-node.azurewebsites.net/${roomId}`
+        const baseUrl = window.location.host
+        const link =  baseUrl +'/' + roomId
         fetch(ApiUrl + `/api/EmailSender/`,{
             method:'POST',
             headers:{'Content-Type': 'application/json'},
