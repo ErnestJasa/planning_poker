@@ -1,0 +1,108 @@
+.header{
+  background-color: white;
+  height: 60px;
+}
+
+.main{
+  /* height: 88vh; */
+  height: 100vh;
+  background-color: rgb(248, 248, 248);
+  margin-top: 60px;
+  padding-top: 5px;
+  padding-bottom: 10px;
+}
+
+.Footer{
+  background-color: white;
+  height: 60px;
+  
+}
+
+.guest-login{
+  height: 84vh;
+}
+
+.lobby{
+  height: 84vh;
+}
+
+.lobby-element{
+border: solid rgb(197, 197, 197) 1px;
+border-radius:0.2cm
+}
+
+.player-list{
+height: 80vh;
+}
+
+.voting{
+height: 80vh;
+margin-right: 2vh;
+}
+
+.voting-area{
+height: 50vh;
+display: flex;
+flex-wrap: wrap;
+}
+
+.voting-controls{
+height: 28vh;
+margin-top: 2vh;
+/* padding-top: 4vh ; */
+
+display: flex; 
+flex-direction: column; 
+justify-content: center; 
+align-items: center;
+}
+
+.voting-config{
+margin-top: 6vh;
+}
+
+.card-style{
+border: solid rgb(0, 0, 0) 1px;
+border-radius:0.2cm;
+width: 12vh;
+height: 100%;
+display: flex;
+align-items: center;
+justify-content: center;
+
+}
+
+.clicked{  
+border: solid rgb(255, 255, 255) 1px;
+border-radius:0.2cm;
+width: 12vh;
+height: 100%;
+display: flex;
+align-items: center;
+justify-content: center;
+background-color: #007bff;
+}
+.clicked h5{
+color:  white;
+}
+
+.cursor-pointer{
+  cursor: pointer;
+}
+.green{
+  color: #035719;
+}
+.border-bot{
+  border-bottom: black;
+  border-bottom-style: solid;
+  border-width: 1px;
+}
+.connected-users-title{
+  color: white;
+}
+.cursor-default{
+  cursor: default;
+}
+.disabled-card{
+  pointer-events: none;
+}

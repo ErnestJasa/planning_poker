@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33110.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlanningPokerAPI", "PlanningPokerAPI\PlanningPokerAPI.csproj", "{90AD7C4A-457C-4D34-9AD3-AC2E234C86FF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{90AD7C4A-457C-4D34-9AD3-AC2E234C86FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90AD7C4A-457C-4D34-9AD3-AC2E234C86FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90AD7C4A-457C-4D34-9AD3-AC2E234C86FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90AD7C4A-457C-4D34-9AD3-AC2E234C86FF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5F4CD29F-DC04-4737-8BE5-623C40B101F3}
+	EndGlobalSection
+EndGlobal
