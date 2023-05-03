@@ -1,1 +1,1 @@
-Scrum planning poker for Festo
+Scrum planning poker project organised by Festo and Akademija.it
