@@ -4,9 +4,7 @@ import AuthContext from "../context/AuthProvider";
 import {SignalRContext} from "../context/SignalRProvider";
 import ApiUrl from "../api/ApiUrl";
 
-//const LOGOUT_URL = 'https://bedarbiai-app-windows.azurewebsites.net/api/User/logout'
-
- const LOGOUT_URL = ApiUrl+'/api/User/logout'
+const LOGOUT_URL = ApiUrl+'/api/User/logout'
 
 const Header=({user})=>{
     let logToggle;

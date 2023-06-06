@@ -4,8 +4,7 @@
 }
 
 .main{
-  /* height: 88vh; */
-  height: 100vh;
+  height: 85vh;
   background-color: rgb(248, 248, 248);
   margin-top: 60px;
   padding-top: 5px;
@@ -41,9 +40,16 @@ margin-right: 2vh;
 }
 
 .voting-area{
-height: 50vh;
+height: 80vh;
+margin-bottom: 4vh;
 display: flex;
 flex-wrap: wrap;
+}
+
+.admin-voting-area{
+  height: 50vh;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .voting-controls{

@@ -11,6 +11,9 @@ namespace PlanningPokerAPI.Data
         public DbSet<User> Users { get; set; }
         public DbSet<GuestUser> GuestUsers { get; set; }
         public DbSet<ConnectedUser> ConnectedUsers { get; set; }
+        public DbSet<CardConfig> ConfigTable { get; set; }
+        public DbSet<CardClear> CardClearTable { get; set; }
+        public DbSet<RoomCardClear> RoomCardClearTable { get; set; }
         public DbSet<RoomCardConfig> RoomConfigTable { get; set; }
         public DbSet<NotificationMessage> NotificationMessages { get; set; }
         public DbSet<Room> Rooms { get; set; }

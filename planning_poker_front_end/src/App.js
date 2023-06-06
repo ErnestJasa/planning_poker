@@ -16,7 +16,6 @@ import NotificationSnackbar from "./notificationSnackbar/NotificationSnackbar";
 
 function App() {
     const [userData, setUserData] = useState({})
-
     return (
         <>
             <Router>

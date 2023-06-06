@@ -17,7 +17,7 @@ const AdminLobby=({})=>{
     return(
         <section className="mt-3  row justify-content-center align-items-center">
             <div className="voting col-7">
-                <div className="lobby-element voting-area ">
+                <div className="lobby-element admin-voting-area ">
                      <AdminVotingArea/>
                 </div>
                 <div className="lobby-element voting-controls">

@@ -2,26 +2,13 @@ import { useState, useContext } from "react";
 import axios from "../api/axios";
 import ApiUrl from "../api/ApiUrl";
 import {SignalRContext} from "../context/SignalRProvider";
-// import {useParams} from "react-router-dom";
 
-
-//const CONFIG_PUT_URL = 'https://bedarbiai-app-windows.azurewebsites.net/api/CardConfig/put'
-
- const CONFIG_PUT_URL = ApiUrl+'/api/CardConfig/put'
- const ROOM_CARD_CLEAR_POST_URL = ApiUrl+'/api/RoomCardClear'
  const ROOM_CONFIG_PUT_URL = ApiUrl+'/api/RoomCardConfig/put'
 
 const VotingConfiguration=props=> {
-  // console.log('configas is storago '+localStorage.getItem('cardConfig'))
   let config = JSON.parse(localStorage.getItem('cardConfig'))
-  // if(config!=null){console.log(config[0])}else{console.log('no config')}
 
   const {handleCardConfigChange, generatedRoomId} = useContext(SignalRContext)
-  // const {roomId} = useParams()
-
-  // axios.post(ROOM_CARD_CLEAR_POST_URL, {clearRoom:roomId, roomClear: false})
-  // console.log('roomclear posted?')
-
   const [items, setItems] = useState(config? config : [
     { id: 1, name: '0', checked: false },
     { id: 2, name: '1/2', checked: false },
@@ -87,7 +74,6 @@ const VotingConfiguration=props=> {
       }); 
     }; 
 const SaveBtn=()=>{
-  axios.put(CONFIG_PUT_URL, {id:1, value: JSON.stringify(items)})
   axios.put(ROOM_CONFIG_PUT_URL, {configRoom:generatedRoomId, value:JSON.stringify(items)})
   handleCardConfigChange()
 }

@@ -7,7 +7,7 @@ namespace PlanningPokerAPI.Helper
     public class JwtService
     {
 
-        private string secureKey = "This is a very secure key"; // TBH no idea why this is needed
+        private string secureKey = "Thgdhytjlilhytrhtrybtybutybuyni";  
 
         public string Generate(int id)
         {

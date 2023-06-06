@@ -5,9 +5,6 @@ import axios from 'axios';
 
 export const SignalRContext = createContext(undefined)
 
-const ROOM_CARD_CLEAR_POST_URL = ApiUrl+'/api/RoomCardClear'
-const ROOM_CARD_CLEAR_PUT_URL = ApiUrl+'/api/RoomCardClear/put'
-
 const ROOM_CARD_CONFIG_GET = ApiUrl+'/api/RoomCardConfig/'
 const ROOM_CARD_CONFIG_POST = ApiUrl+'/api/RoomCardConfig'
 
@@ -39,8 +36,6 @@ export const SignalRProvider = ({children}) => {
         { id: 13, name: 'Coffee', checked: false },
       ]); 
 
-      let config;
-
     const newConnection = new HubConnectionBuilder()
         .withUrl(ApiUrl+'/lobby')
         .configureLogging(LogLevel.Information)
@@ -62,22 +57,15 @@ export const SignalRProvider = ({children}) => {
                 await newConnection.invoke("JoinRoom", {username: localStorage.getItem('username'), room: generatedRoomId, role: 'guest', vote: "?", voted: false})
             }
             await setConnection(newConnection)
-            axios.post(ROOM_CARD_CLEAR_POST_URL, {clearRoom:generatedRoomId, roomClear: false})
 
             axios.get(ROOM_CARD_CONFIG_GET+generatedRoomId)
             .then(res => {
-                console.log(res.data.value)
                 const data = JSON.parse(res.data.value)
                 setItems(data)
                 localStorage.setItem('cardConfig', res.data.value);
-
-                console.log('items: ',items)
             })
-            // .catch(err=>console.log(err))
             .catch(axios.post(ROOM_CARD_CONFIG_POST,{configRoom:generatedRoomId, value:JSON.stringify(items)}),
             localStorage.setItem('cardConfig', JSON.stringify(items)))
-                
-
         }catch (e){
             console.log(e)
         }
@@ -132,18 +120,12 @@ export const SignalRProvider = ({children}) => {
     }
 
     const handleFinishVoting = async ()=>{
-        // await axios.put(CLEAR_PUT_URL, {id:1, clear:true})
-        await axios.put(ROOM_CARD_CLEAR_PUT_URL, {clearRoom:generatedRoomId, roomClear:true})
-
         await connection.invoke("FinishVoting", generatedRoomId)
         await connection.invoke("FlipCards",false, generatedRoomId)
         await connection.invoke("CheckIfEveryoneVoted", generatedRoomId)
     }
 
     const clearVotes =async ()=>{
-        // await axios.put(CLEAR_PUT_URL, {id:1, clear:true})
-        await axios.put(ROOM_CARD_CLEAR_PUT_URL, {clearRoom:generatedRoomId, roomClear:true})
-
         await connection.invoke("FlipCards",false, generatedRoomId)
         await connection.invoke("ClearVotes", generatedRoomId)
 
@@ -151,9 +133,6 @@ export const SignalRProvider = ({children}) => {
     }
 
     const handleCardConfigChange = async ()=>{
-        // await axios.put(CLEAR_PUT_URL, {id:1, clear:true})
-        await axios.put(ROOM_CARD_CLEAR_PUT_URL, {clearRoom:generatedRoomId, roomClear:true})
-
         await connection.invoke("CardConfigurationNotification", generatedRoomId)
         await connection.invoke("CheckIfEveryoneVoted", generatedRoomId)
     }
